@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+<head>
+<title>Gallery</title>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">Music in the Neighbourhood</div>
+      
+        <!--NAVIGATION MENU-->
+        <ul class="nav-links">
+      
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      
+            <!-- NAVIGATION MENUS -->
+          <div class="menu"> 
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./events.html">Events</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./donate.html">Donate</a></li>
+          </div>
+        
+        </ul>
+        </nav>
+
+    <div id="gallery"> 
+        <h2 id="pgtitle"><br><br>Concert Photo Gallery</h2>
+          <p id="imageblurb">Click on a thumbnail below to view a picture.</p> 
+          <div id="image-gallery">
+            <img id="current-image" src="images/image1.jpg" alt="Image 1">
+              <div id="image-thumbs"></div>
+        </div>
+      </div> 
+
+<script src="script.js"></script>
+</body>
+</html>
