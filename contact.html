@@ -28,12 +28,29 @@
         
         </ul>
     </nav>
-<div>
-    <p id="learnmore">All proceeds from Music in the Neighbourhood will be donated to the Balding for Dollars Charity. Balding for Dollars is an organization in partnership with the BC Children’s Hospital Foundation that raises funds to support programs that benefit Oncology, Hematology and Bone Marrow Transplant patients in BC. To learn more about Balding for Dollars, click <a class="noformat" href="https://baldingfordollars.com/">here.</a>  </p>
-<div id="blurb"><img id="qrcode" src="mainimgs/qrcode.JPG">
-    <span>To support Music in the Neighbourhood and help kids fight cancer, scan the QR code or click <a class="noformat" href="https://secured.bcchf.ca/registrant/mobile/mobilePersonalPage.aspx?registrationID=5204026&langPref=en-CA&Referrer=direct%2fnone">here.</a> . </span>
-</div>
 
-</div>
+
+  <h1>Contact Us</h1>
+
+  <div class="form-wrapper">
+    <div class="form-container">
+
+      <form id="contact-form" action="/send-email" method="POST">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Your Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="contact.js"></script>
+
 </body>
 </html>
