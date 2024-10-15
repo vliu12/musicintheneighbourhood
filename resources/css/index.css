@@ -188,6 +188,12 @@ a {
     font-size: xx-large ;
 }
 
+.aboutgallery {
+  padding: 20px;
+  text-align: center;
+  font-size: large ;
+}
+
 .p1 {
 padding-left: 10%;
 padding-right: 10%;
