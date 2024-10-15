@@ -185,6 +185,7 @@ a {
 .about {
     padding: 20px;
     text-align: center;
+    font-size: xx-large ;
 }
 
 .p1 {
@@ -423,3 +424,17 @@ padding-bottom: 100px;
       max-width: 90%;
     }
   }
+
+  .px {
+   text-align: center; 
+   font-size: large;
+   position: static;
+  }
+
+  .picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding: 10px;
+}
