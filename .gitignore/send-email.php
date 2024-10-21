@@ -1,4 +1,4 @@
-<?
+<?php
 $mail_to_send_to = "liuvictoria12@gmail.com";
 $from_email = "contact@musicintheneighbourhood.com";
 $sendflag = $_REQUEST['sendflag'];    
