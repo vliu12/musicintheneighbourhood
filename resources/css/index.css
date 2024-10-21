@@ -86,10 +86,11 @@ input[type=checkbox] {
     }
 
     @media (max-width: 768px) {
+      /*dropdown menu */
       .menu {
         display: none;
         position: absolute;
-        background-color: rgba(128, 128, 128, 0.7); /* Gray with transparency for the dropdown */
+        background-color: rgba(0, 0, 0, 0.7); /* Gray with transparency for the dropdown */
         right: 0;
         left: 0;
         text-align: left;
@@ -100,9 +101,9 @@ input[type=checkbox] {
       
       .menu li:hover {
         display: inline-block;
-        background-color:#fff;
+        background-color:#dddddd;
         transition: 0.3s ease;
-        color:#dddddd; 
+        color: white; 
       }
     
       .menu li + li {
@@ -369,7 +370,7 @@ padding-bottom: 100px;
   .form-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: rgb(0, 0, 0, 0.7);
   }
   
   /* Label styling */
@@ -415,7 +416,7 @@ padding-bottom: 100px;
   }
   
   button[type="submit"]:hover {
-    background-color: #4cae4c;
+    background-color: green;
   }
   
   /* Add some spacing for the form fields */
