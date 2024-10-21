@@ -35,18 +35,20 @@
   <div class="form-wrapper">
     <div class="form-container">
 
-      <form id="contact-form" action="/send-email" method="POST">
-        <label for="name">Your Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-
+      <form id="contact-form" action="send_email.php" method="POST">
+        <label for="firstName">Your Name:</label><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+    
         <label for="email">Your Email:</label><br>
         <input type="email" id="email" name="email" required><br><br>
-
+    
         <label for="message">Your Message:</label><br>
-        <textarea id="message" name="message" required></textarea><br><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
 
-        <button type="submit">Send Message</button>
-      </form>
+
+        <button type="submit">Send</button>
+    </form>
+    
     </div>
   </div>
 
