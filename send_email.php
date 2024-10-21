@@ -38,6 +38,7 @@ if (!empty($_POST))
 
       // Create a new PHPMailer instance
       $mail = new PHPMailer(exceptions: true);
+
       try {
             // Configure the PHPMailer instance
             $phpmailer = new PHPMailer();
@@ -47,7 +48,6 @@ if (!empty($_POST))
             $phpmailer->Port = 587;
             $phpmailer->Username = 'api';
             $phpmailer->Password = 'b3c10492b779df1b1afb02c066e94eea';
-           
             // Set the sender, recipient, subject, and body of the message 
             $mail->setFrom($email);
             $mail->addAddress($email);
@@ -61,7 +61,7 @@ if (!empty($_POST))
             $successMessage = "<p style='color: green; '>Thank you for contacting us :)</p>";
       } catch (Exception $e) {
             $errorMessage = "<p style='color: red; '>Oops, something went wrong. Please try again later</p>";
-echo $errorMessage;
+            echo $errorMessage;
   }
 }
 }
