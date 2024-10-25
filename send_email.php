@@ -47,6 +47,7 @@ if (!empty($_POST))
             $mail->isSMTP();
             $mail->Host = 'live.smtp.mailtrap.io';
             $mail->SMTPAuth = true;
+            $mail->SMTPSecure = 'tls'; // or 'tls'
             $mail->Port = 587;
             $mail->Username = 'api';
             $mail->Password = 'b3c10492b779df1b1afb02c066e94eea';
@@ -62,6 +63,7 @@ if (!empty($_POST))
             // Send the message
             $mail->send () ;
             $successMessage = "<p style='color: green; '>Thank you for contacting us :) A member of our team will be in touch with you shortly.</p>";
+            echo $successMessage;
       } catch (Exception $e) {
             $errorMessage = "<p style='color: red; '>Oops, something went wrong. Please try again later</p>";
             echo $errorMessage;
