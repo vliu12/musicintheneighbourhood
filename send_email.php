@@ -42,7 +42,6 @@ if (!empty($_POST))
       try {
             // Configure the PHPMailer instance
             // Initialize and configure the PHPMailer instance
-            $mail = new PHPMailer(true);  // Keep only one instance here
             $mail->isSMTP();
             $mail->Host = 'live.smtp.mailtrap.io';
             $mail->SMTPAuth = true;
@@ -57,6 +56,10 @@ if (!empty($_POST))
             $mail->Subject = $emailSubject;
             $mail->isHTML(true);  // Corrected syntax for isHTML
             $mail->Body = "<p>Name: {$name}</p><p>Email: {$email}</p><p>Message: {$message}</p>";
+
+            $mail->SMTPDebug = 2; // Detailed debug output
+            $mail->Debugoutput = 'html'; // Output as HTML
+
 
          
             // Send the message
