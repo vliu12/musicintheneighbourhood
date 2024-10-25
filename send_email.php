@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 $errors = [];
 $errorMessage = ' ';
 $successMessage = ' ';
-echo 'Your email is sending ...';
+
 if (!empty($_POST))
 {
   $name = $_POST['firstName'];
@@ -32,9 +32,11 @@ if (!empty($_POST))
   if (!empty($errors)) {
       $allErrors = join ('<br/>', $errors);
       $errorMessage = "<p style='color: red; '>{$allErrors}</p>";
+      header("Location: contact.html?error=" . urlencode($allErrors));
+      exit;
   } else {
-      $fromEmail = 'musicintheneighbourhood@gmail.com';
-      $emailSubject = 'New Message from Contact Form';
+      $fromEmail = 'hello@musicintheneighbourhood.com';
+      $emailSubject = 'Hello from the Music in the Neighbourhood Society!';
 
       // Create a new PHPMailer instance
       $mail = new PHPMailer(exceptions: true);
@@ -55,21 +57,19 @@ if (!empty($_POST))
 
             $mail->Subject = $emailSubject;
             $mail->isHTML(true);  // Corrected syntax for isHTML
-            $mail->Body = "<p>Name: {$name}</p><p>Email: {$email}</p><p>Message: {$message}</p>";
-
-            $mail->SMTPDebug = 2; // Detailed debug output
-            $mail->Debugoutput = 'html'; // Output as HTML
-
-
+            $mail->Body = "<p>Hey {$name},</p><p>Thanks for contacting us! A member of our team will be in touch with you soon.</p>";
          
             // Send the message
             $mail->send () ;
-            $successMessage = "<p style='color: green; '>Thank you for contacting us :)</p>";
+            $successMessage = "<p style='color: green; '>Thank you for contacting us :) A member of our team will be in touch with you shortly.</p>";
       } catch (Exception $e) {
             $errorMessage = "<p style='color: red; '>Oops, something went wrong. Please try again later</p>";
             echo $errorMessage;
   }
 }
+
+
+
 }
 
 ?>

@@ -2,7 +2,7 @@
 $mail_to_send_to = "liuvictoria12@gmail.com";
 $from_email = "contact@musicintheneighbourhood.com";
 $sendflag = $_REQUEST['sendflag'];    
-$name=$_REQUEST['name'];
+$name=$_REQUEST['firstName'];
 if ( $sendflag == "send" )
         {
                 $subject= "Message subject";
