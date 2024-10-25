@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 $errors = [];
 $errorMessage = ' ';
 $successMessage = ' ';
-echo 'sending ...';
+echo 'Your email is sending ...';
 if (!empty($_POST))
 {
   $name = $_POST['firstName'];
@@ -41,20 +41,23 @@ if (!empty($_POST))
 
       try {
             // Configure the PHPMailer instance
-            $phpmailer = new PHPMailer();
-            $phpmailer->isSMTP();
-            $phpmailer->Host = 'live.smtp.mailtrap.io';
-            $phpmailer->SMTPAuth = true;
-            $phpmailer->Port = 587;
-            $phpmailer->Username = 'api';
-            $phpmailer->Password = 'b3c10492b779df1b1afb02c066e94eea';
+            // Initialize and configure the PHPMailer instance
+            $mail = new PHPMailer(true);  // Keep only one instance here
+            $mail->isSMTP();
+            $mail->Host = 'live.smtp.mailtrap.io';
+            $mail->SMTPAuth = true;
+            $mail->Port = 587;
+            $mail->Username = 'api';
+            $mail->Password = 'b3c10492b779df1b1afb02c066e94eea';
+
             // Set the sender, recipient, subject, and body of the message 
-            $mail->setFrom($email);
-            $mail->addAddress($email);
-            $mail->setFrom($fromEmail);
+            $mail->setFrom($fromEmail, 'Music in the Neighbourhood');  // Set the sender email and name
+            $mail->addAddress($email);  // The recipient’s email address
+
             $mail->Subject = $emailSubject;
-            $mail->isHTML( isHtml: true);
+            $mail->isHTML(true);  // Corrected syntax for isHTML
             $mail->Body = "<p>Name: {$name}</p><p>Email: {$email}</p><p>Message: {$message}</p>";
+
          
             // Send the message
             $mail->send () ;
